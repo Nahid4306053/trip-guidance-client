@@ -1,0 +1,195 @@
+[
+    {
+      "id": 1,
+      "place": "Nepal - Annapurna Circuit",
+      "coordinates": {
+        "latitude": 28.5306,
+        "longitude": 83.8783
+      }
+    },
+    {
+      "id": 2,
+      "place": "Switzerland - Jungfrau Region",
+      "coordinates": {
+        "latitude": 46.5476,
+        "longitude": 7.9856
+      }
+    },
+    {
+      "id": 3,
+      "place": "Peru - Huayhuash Circuit",
+      "coordinates": {
+        "latitude": -10.0484,
+        "longitude": -76.7501
+      }
+    },
+    {
+      "id": 4,
+      "place": "Pakistan - Karakoram Highway",
+      "coordinates": {
+        "latitude": 35.3328,
+        "longitude": 77.6336
+      }
+    },
+    {
+      "id": 5,
+      "place": "New Zealand - Queenstown",
+      "coordinates": {
+        "latitude": -45.0312,
+        "longitude": 168.6626
+      }
+    },
+    {
+      "id": 6,
+      "place": "Switzerland - Interlaken",
+      "coordinates": {
+        "latitude": 46.6864,
+        "longitude": 7.8632
+      }
+    },
+    {
+      "id": 7,
+      "place": "Costa Rica - Arenal Volcano Region",
+      "coordinates": {
+        "latitude": 10.4624,
+        "longitude": -84.7037
+      }
+    },
+    {
+      "id": 8,
+      "place": "South Africa - Bloukrans Bridge",
+      "coordinates": {
+        "latitude": -33.9644,
+        "longitude": 23.5667
+      }
+    },
+    {
+      "id": 9,
+      "place": "Vietnam - Phong Nha-Ke Bang National Park",
+      "coordinates": {
+        "latitude": 17.5901,
+        "longitude": 106.2970
+      }
+    },
+    {
+      "id": 10,
+      "place": "Mexico - Sistema Sac Actun",
+      "coordinates": {
+        "latitude": 20.4760,
+        "longitude": -87.3710
+      }
+    },
+    {
+      "id": 11,
+      "place": "France - Lascaux Caves",
+      "coordinates": {
+        "latitude": 45.0510,
+        "longitude": 1.1829
+      }
+    },
+    {
+      "id": 12,
+      "place": "United States - Mammoth Cave, Kentucky",
+      "coordinates": {
+        "latitude": 37.1800,
+        "longitude": -86.1000
+      }
+    },
+    {
+      "id": 13,
+      "place": "United Arab Emirates - Dubai",
+      "coordinates": {
+        "latitude": 25.2769,
+        "longitude": 55.2962
+      }
+    },
+    {
+      "id": 14,
+      "place": "Namibia - Sossusvlei",
+      "coordinates": {
+        "latitude": -24.7350,
+        "longitude": 15.2960
+      }
+    },
+    {
+      "id": 15,
+      "place": "Australia - Simpson Desert",
+      "coordinates": {
+        "latitude": -24.2169,
+        "longitude": 136.7944
+      }
+    },
+    {
+      "id": 16,
+      "place": "Morocco - Sahara Desert",
+      "coordinates": {
+        "latitude": 23.4162,
+        "longitude": -5.2669
+      }
+    },
+    {
+      "id": 17,
+      "place": "Costa Rica - Tortuguero National Park",
+      "coordinates": {
+        "latitude": 10.5500,
+        "longitude": -83.5126
+      }
+    },
+    {
+      "id": 18,
+      "place": "Brazil - Amazon Rainforest",
+      "coordinates": {
+        "latitude": -3.4653,
+        "longitude": -62.2159
+      }
+    },
+    {
+      "id": 19,
+      "place": "Malaysia - Taman Negara",
+      "coordinates": {
+        "latitude": 4.3962,
+        "longitude": 102.1516
+      }
+    },
+    {
+      "id": 20,
+      "place": "Australia - Daintree Rainforest",
+      "coordinates": {
+        "latitude": -16.2550,
+        "longitude": 145.3150
+      }
+    },
+    {
+      "id": 21,
+      "place": "New Zealand - Milford Track",
+      "coordinates": {
+        "latitude": -44.6206,
+        "longitude": 167.8970
+      }
+    },
+    {
+      "id": 22,
+      "place": "Canada - Banff National Park",
+      "coordinates": {
+        "latitude": 51.4968,
+        "longitude": -115.9281
+      }
+    },
+    {
+      "id": 23,
+      "place": "United States - Appalachian Trail",
+      "coordinates": {
+        "latitude": 35.7350,
+        "longitude": -83.7780
+      }
+    },
+    {
+      "id": 24,
+      "place": "Sweden - Kungsleden (King's Trail)",
+      "coordinates": {
+        "latitude": 68.3583,
+        "longitude": 18.0958
+      }
+    }
+  ]
+
