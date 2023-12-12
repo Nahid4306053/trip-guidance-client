@@ -46,7 +46,7 @@ export default function Navber() {
             <div className="flex-1  capitalize text-2xl font-bold">
               <Link to="/">
                 <img
-                  className="lg:h-20  grayscale dark:g h-14"
+                  className={`lg:h-20  ${Darkmood && "grayscale"}   h-14`}
                   src={logo}
                   alt=""
                 />

@@ -24,7 +24,7 @@ export default function ToureGideCard({ data }) {
       <div className="description text-center grid gap-3 px-5">
         <p className={` ${Darkmood ? "text-yellow-500": "text-blue-900"}  text-xl  font-bold capitalize`}>{role}</p>
         <p className={`text-sky-500 text-5xl font-bold`}>
-          <Link to={`/guider-details/${data._id}`}>{displayName}</Link>
+          <Link to={`/guider-details/${data._id}`}>{displayName && displayName.slice(0,16)}</Link>
         </p>
         <div className="social text-xl flex justify-center gap-4 text-blue-900 ">
           <Link to={`/guider-details/${data._id}`}>

@@ -12,7 +12,7 @@ export default function Footer() {
     <footer className={` ${ Darkmood ? "bg-base-300" : " bg-blue-100"}`}>
       <div className="grid  mt-10  container gap-8 mx-auto lg:grid-cols-4 md:grid-cols-2 grid-cols-1">
         <div className="about_info mt-10">
-          <img className="h-14 opacity-75 grayscale" src={logo} alt="" />
+          <img className={`h-14 opacity-75 ${Darkmood && "grayscale"}`} src={logo} alt="" />
           <br />
           <div className="info mt-5 flex gap-4 items-center">
             <h2 className="text-4xl   text-blue-900 w-10">

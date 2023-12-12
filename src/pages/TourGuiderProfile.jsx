@@ -91,10 +91,10 @@ export default function TourGuiderProfile() {
 
      </div>
      }
-     <div className='text-3xl mt-24 font-bold text-blue-900'>Reviews</div>
+     <div className={`text-3xl mt-24 font-bold ${Darkmood ? "text-sky-400" : "text-blue-900" }`}>Reviews</div>
      <TourGuiderRiview id={GuiderDetails.data._id}></TourGuiderRiview>
 
-     <div className='text-3xl mt-24 font-bold text-blue-900'>Drop a Review</div>
+     <div className={`text-3xl mt-24 font-bold ${Darkmood ? "text-sky-400" : "text-blue-900" }`}>Drop a Review</div>
      <RatingForm id={GuiderDetails.data._id}></RatingForm>
      </div>
      
