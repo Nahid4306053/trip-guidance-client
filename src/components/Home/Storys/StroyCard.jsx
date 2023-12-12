@@ -1,16 +1,17 @@
+/* eslint-disable react/prop-types */
 import moment from "moment/moment";
-import React from "react";
 import { Link } from "react-router-dom";
+import { useMood } from "../../../Context/TemplateMoodContext";
 
 export default function StroyCard({ data }) {
   const { createdAt, description, title, writer } = data || {};
-
+  const { Darkmood } = useMood();
   return (
     <div className="Card rounded-lg group relative  flex ">
       <div className="avatar top-[calc(50%-96px)] border rounded-bl-lg rounded-tr-lg overflow-hidden h-24 absolute w-24 object-cover">
         <img src={writer?.photoURL} alt="" />
       </div>
-      <div className="description ml-12 pl-20 bg-blue-100 pr-10 py-10 shadow-lg w-full">
+      <div className={`description ml-12 pl-20 ${Darkmood ? "bg-base-300" : "bg-blue-100"}  pr-10 py-10 shadow-lg w-full`}>
         <h1 className="title text-sky-500 md:text-xl font-semibold ">
           {title.slice(0, 55)}...
         </h1>

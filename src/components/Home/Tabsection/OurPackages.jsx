@@ -4,6 +4,7 @@ import usePackages from "../../../Hooks/usePackages";
 import PackageCard from "../../../components/shared/PackageCard";
 import SmallError from "../../../components/shared/SmallError";
 import SmallLoading from "../../../components/shared/SmallLoading";
+import { useMood } from "../../../Context/TemplateMoodContext";
 
 export default function Packages() {
   const [page, setpage] = useState(1);
@@ -11,7 +12,7 @@ export default function Packages() {
     page,
     6
   );
-
+ 
   return (
     <>
       <div className="my-20">

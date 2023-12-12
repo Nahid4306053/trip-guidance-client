@@ -9,7 +9,7 @@ export default function Newsletter() {
       <h1 className='title  md:leading-[80px] text-5xl text-white font-extrabold '>Subscribe Our NewsLetter</h1>
        <div>              
          <div className='NewsLetter_form flex justify-center mt-7 text-lg'>
-          <input type="text" className='focus:outline-none p-3 w-full max-w-xs placeholder:' placeholder='Type your email ' />
+          <input type="text" className='focus:outline-none p-3 w-full bg-white max-w-xs placeholder:' placeholder='Type your email ' />
           <button className='bg-yellow-500 px-7 text-white'>Subscribe </button>
          </div> 
        </div>

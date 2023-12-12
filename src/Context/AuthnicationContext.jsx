@@ -1,5 +1,8 @@
+/* eslint-disable react-refresh/only-export-components */
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile, } from "firebase/auth";
-import React, { createContext, useContext, useEffect, useState } from "react";
+import  { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import app from "../Firebase/Firebase.config";
@@ -61,6 +64,7 @@ export default function AuthnicationContext({ children }) {
       }
     });
     
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const continueWithGoogle = async () => {

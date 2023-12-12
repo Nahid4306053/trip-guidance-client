@@ -1,10 +1,13 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import SectionTitle from "../../shared/SectionTitle";
 import OurPackages from "./OurPackages";
 import OurTourGuider from "./OurTourGuider";
 import OverView from "./OverView";
+import { useMood } from "../../../Context/TemplateMoodContext";
 
 export default function Tabsection() {
+  const { Darkmood } = useMood();
   const [tab, seTab] = useState(1);
   return (
     <div className="container mx-auto my-10 md:my-28">
@@ -12,7 +15,7 @@ export default function Tabsection() {
         title="Tourism and Travel Guide"
         subtitle="Explore Packaeges, Discover Experiences"
       ></SectionTitle>
-      <div className="tab-items border-b-2 border-opacity-70  mt-14 flex text-white gap-2 md:gap-5">
+      <div className={`tab-items ${Darkmood && "bg-base-300  border-b-0"} border-b-2 border-opacity-70  mt-14 flex text-white gap-2 md:gap-5`}>
         <div
           onClick={() => seTab(1)}
           className={`items ${

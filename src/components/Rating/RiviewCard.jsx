@@ -1,11 +1,14 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import React from 'react'
 import Rating from 'react-rating'
+import { useMood } from '../../Context/TemplateMoodContext'
 
 export default function RiviewCard({data}) {
   const {createdAt,rating,reviewer,review} = data       
-              
+  const { Darkmood } = useMood()            
   return (
-   <div className='reviewcard flex items-center gap-4  bg-opacity-75 rounded-lg bg-blue-100 max-w-3xl p-5'>
+   <div className={`reviewcard flex items-center gap-4  bg-opacity-75 rounded-lg ${Darkmood ? "bg-base-300" : "bg-blue-100"}  max-w-3xl p-5`}>
      <div className="w-24">
         <img className='md:w-24 md:h-24  h-16 w-16 object-cover rounded-full ' src={reviewer?.photoURL} alt="" />
      </div> 

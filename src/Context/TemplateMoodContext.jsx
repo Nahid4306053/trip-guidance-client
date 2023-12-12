@@ -1,6 +1,8 @@
+/* eslint-disable react/prop-types */
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { getmood } from "../Utils/Controllmodd";
 const DarkmoodContext = createContext();
+// eslint-disable-next-line react-refresh/only-export-components
 export const useMood =()=>{
      return useContext(DarkmoodContext)               
 }
@@ -8,19 +10,20 @@ export const useMood =()=>{
 
 export default function TemplateMoodContext({ children }) {
   const [Darkmood, setDarkmood] = useState(false);
-  // useEffect(() => {
-  //   const mood = getmood();
-  //   if(mood){
-  //   if (mood === "light") {
-  //     setDarkmood(false);
-  //     const htmltag = document.querySelector("html");
-  //     htmltag.setAttribute("data-theme", "light");
-  //   } else {
-  //     setDarkmood(true);              
-  //     const htmltag = document.querySelector("html");
-  //     htmltag.setAttribute("data-theme", "dark");
-  //   }
-  // }
-  // }, [Darkmood]);
+  useEffect(() => {
+    const mood = getmood();
+    if(mood){
+    if (mood === "light") {
+      setDarkmood(false);
+      const htmltag = document.querySelector("html");
+      htmltag.setAttribute("data-theme", "light");
+    } else {
+      setDarkmood(true);              
+      const htmltag = document.querySelector("html");
+      htmltag.setAttribute("data-theme", "dark");
+    }
+  }
+  console.log(Darkmood);
+  }, [Darkmood]);
   return <DarkmoodContext.Provider value={{Darkmood,setDarkmood}}>{children}</DarkmoodContext.Provider>;
 }

@@ -31,16 +31,21 @@
 }.team_card:hover{
    
  .team_card_img{
-  
-  border: 10px solid #BFDBFE;
    height: 110px;
    width: 110px;
    top: 210px;
    left:50px;
    @include border-radious(100%);
    overflow: hidden;
-   
  } 
+
+ .ligthborader{
+   border: 10px solid #BFDBFE;
+ } .DarkBorader{
+   border: 10px solid #15191E;
+ }
+ 
+
  .description{
   @include transition(.5s);
   @include translatey(140px);

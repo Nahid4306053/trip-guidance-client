@@ -1,13 +1,15 @@
-import React from "react";
+/* eslint-disable react/prop-types */
+
 import PackageCardSlide from "../PackageCard/PackageCardSlide";
 import { Link } from "react-router-dom";
 import { GoClock } from "react-icons/go";
 import { FaRegMap } from "react-icons/fa6";
+import { useMood } from "../../Context/TemplateMoodContext";
 
 export default function PackageCard({ data }) {
-
+  const { Darkmood } = useMood();
   return (
-    <div className="card rounded-sm   overflow-hidden bg-blue-100 shadow-xl">
+    <div className={`"card rounded-sm ${Darkmood ?  "bg-base-300" : "bg-blue-100 "}  overflow-hidden shadow-xl"`}>
       <PackageCardSlide id={data._id} data={data.gallery}></PackageCardSlide>
       <div className="card-body mt-5"> 
         <h2 className="text-xl">

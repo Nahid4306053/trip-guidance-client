@@ -1,12 +1,15 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import SectionTitle from '../../shared/SectionTitle'
 import SmallLoading from '../../shared/SmallLoading'
 import SmallError from '../../shared/SmallError'
 import useTourType from '../../../Hooks/useTourType'
 import TourTypeCard from './TourTypeCard'
+import { useMood } from '../../../Context/TemplateMoodContext'
 
 export default function TourTypesSection() {
-  const {isLoading , isError , isSuccess , tourTypes , error } = useTourType()  
+  const {isLoading , isError , isSuccess , tourTypes , error } = useTourType() ;
+  const { Darkmood } = useMood() 
   return (
     <div style={{background:"url(https://i.ibb.co/Nn33xph/Views-of-Lake-Louise-from-the-Big-Beehive-Alberta-Canada.jpg)",backgroundAttachment:"fixed"}} className="tourtypes min-h-[550px]  py-20">
       <div className='content '>

@@ -8,7 +8,7 @@ export default function TopHeader() {
   return (
     <div
       className={`w-full fixed top-0 text-xs md:text-base  text-white ${
-        Darkmood ? "bg-[#0f1318]" : "bg-yellow-500 z-[100]"
+        Darkmood ? "bg-[#0f1318]  z-[100]" : "bg-yellow-500 z-[100]"
       } `}
     >
       {/* bg-pink-400 */}

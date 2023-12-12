@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import React, { useRef, useState } from 'react';
 import Rating from 'react-rating';
 import {useAuth} from '../../Context/AuthnicationContext'
@@ -5,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import useAxiosSecureV1 from '../../Hooks/useAxiosSecureV1';
+import { useMood } from '../../Context/TemplateMoodContext';
 export default function RatingForm({id}){
   const queryClient = useQueryClient()
   const {CurrentUser} = useAuth();
@@ -50,8 +53,9 @@ export default function RatingForm({id}){
       navigate("/login")
     }
   }
+  const { Darkmood } = useMood()     
   return (
-    <form ref={formref} onSubmit={handelReviewData} className='mt-5 bg-blue-100 bg-opacity-70 p-7'>
+    <form ref={formref} onSubmit={handelReviewData} className={`mt-5 ${Darkmood ? "bg-base-300" : "bg-blue-100"}  bg-opacity-70 p-7`}>
       <h1 className='text text-xl '>Hover in Star and Give Rating</h1>
       <div  className='text-2xl text-yellow-500 mt-3'>
       <Rating
@@ -67,6 +71,6 @@ export default function RatingForm({id}){
       <button type='submit' disabled={CurrentUser && CurrentUser.role !== 'user'} className='btn bg-sky-900 hover:bg-sky-900 text-white mt-5'>Submit Review</button>
     </form>
   );
-};
+}
 
 

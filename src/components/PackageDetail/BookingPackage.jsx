@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { TextField } from "@mui/material";
 import { useMutation } from "@tanstack/react-query";
 import React, { useEffect, useRef, useState } from "react";
@@ -9,6 +10,7 @@ import useAxiosSecureV1 from "../../Hooks/useAxiosSecureV1";
 import useTourGuidersData from "../../Hooks/useTourGuideDatas";
 import useWindowSize from 'react-use/lib/useWindowSize'
 import Confetti from 'react-confetti'
+import { useMood } from "../../Context/TemplateMoodContext";
 
 
 export default function BookingPackage({ data }) {
@@ -19,12 +21,13 @@ export default function BookingPackage({ data }) {
   const { TourGuidersData, isSuccess, error, isError } = useTourGuidersData();
   const { width, height } = useWindowSize()
   const formref = useRef();
+  const { Darkmood } = useMood()
   const mutation = useMutation({
     mutationFn: async (data) => {
       const res = await AxiosSecureV1.post(`/package/book/`, data);
       return res;
     },
-
+    
     onSuccess: (savedata) => {
       
       formref.current.reset(); 
@@ -97,7 +100,7 @@ export default function BookingPackage({ data }) {
     }
   };
   return (
-    <div className="px-10 lg:px-0">
+    <div className="px-10 p-5 lg:p-5 bg-base-300 ">
       <h1 className="text-3xl font-bold">Book This Package</h1>
         <Confetti
         tweenDuration={5000}
@@ -111,32 +114,43 @@ export default function BookingPackage({ data }) {
         className="space-y-5 mt-10"
         action=""
       >
-        <TextField
+ 
+          <div className="form-control">
+          <label className="label">
+            <span className="label-text">Your Name</span>
+          </label>
+          <input
+           value={CurrentUser?.displayName || "example"}
+            type="text"
+            readOnly
          
-          fullWidth
-          id="Your name"
-          InputProps={{ readOnly: true }}
-          defaultValue={CurrentUser?.displayName || "example"}
-          label="Your name"
-          variant="outlined"
-        />
-        <TextField
-          fullWidth
-          id="Your name"
-          InputProps={{ readOnly: true }}
-          defaultValue={CurrentUser?.email || "example@gmail.com"}
-          label="Your Email"
-          variant="outlined"
-        />
+            className="input rounded-sm  input-bordered"
+          />
+        </div>        
+           <div className="form-control">
+          <label className="label">
+            <span className="label-text">Your Email</span>
+          </label>
+          <input
+           value={CurrentUser?.email || "example@gmail.com"}
+            type="text"
+            readOnly
+                className="input rounded-sm  input-bordered"
+          />
+        </div>        
+           <div className="form-control">
+          <label className="label">
+            <span className="label-text">Package Price</span>
+          </label>
+          <input
+           value={data.price}
+            type="text"
+            readOnly
+            className="input rounded-sm  input-bordered"
+          />
+        </div> 
 
-        <TextField
-          fullWidth
-          id="Your name"
-          label="Price"
-          defaultValue={data.price}
-          InputProps={{ readOnly: true }}
-          variant="outlined"
-        />
+
         <div className="form-control">
           <label className="label">
             <span className="label-text">Select a tour Date</span>
@@ -148,6 +162,7 @@ export default function BookingPackage({ data }) {
             required
           />
         </div>
+
         <div className="form-control">
           <label className="label">
             <span className="label-text">Select Tour Guider</span>

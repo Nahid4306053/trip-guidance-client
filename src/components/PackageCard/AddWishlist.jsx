@@ -46,15 +46,15 @@ export default function AddWishlist({id}) {
   }
   return (
     CurrentUser ?  isSuccess && WishlistData.data ? 
-    <div  className='absolute cursor-pointer   z-10 p-2 top-3 right-3 rounded-xl bg-white '>
+    <div  className='absolute cursor-pointer   z-10 p-2 top-3 right-3 rounded-xl bg-base-300 '>
     <Link to="/dashboard/my-wishlist"><FaHeart   className='text-secondary'/> </Link>
     </div>
     :
-    <div onClick={addtowishlist} className='absolute cursor-pointer group  z-10 p-2 top-3 right-3 rounded-xl bg-white '>
+    <div onClick={addtowishlist} className='absolute cursor-pointer group  z-10 p-2 top-3 right-3 rounded-xl bg-base-300 '>
     <FaRegHeart  className='group-hover:text-secondary'/> 
     </div>
     :
-    <div onClick={addtowishlist} className='absolute cursor-pointer group  z-10 p-2 top-3 right-3 rounded-xl bg-white '>
+    <div onClick={addtowishlist} className='absolute cursor-pointer group  z-10 p-2 top-3 right-3 rounded-xl bg-base-300 '>
     <FaRegHeart  className='group-hover:text-secondary'/> 
     </div>
   )

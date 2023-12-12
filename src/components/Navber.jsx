@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Link, NavLink } from "react-router-dom";
 import { useAuth } from "../Context/AuthnicationContext";
 import { useMood } from "../Context/TemplateMoodContext";
@@ -35,10 +35,10 @@ export default function Navber() {
   return (
     <header
       className={`${
-        Darkmood ? "bg-base-300" : "bg-blue-100"
+        Darkmood ? "bg-base-300 dark" : "bg-blue-100 light"
       }  shadow-lg fixed  top-14 w-full z-[100]`}
     >
-      <div className="drawer ">
+      <div className="drawer shadow-xl">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col container mx-auto">
           {/* Navbar */}
@@ -46,7 +46,7 @@ export default function Navber() {
             <div className="flex-1  capitalize text-2xl font-bold">
               <Link to="/">
                 <img
-                  className="lg:h-20 opacity-75 dark:g h-14"
+                  className="lg:h-20  grayscale dark:g h-14"
                   src={logo}
                   alt=""
                 />
@@ -55,7 +55,7 @@ export default function Navber() {
 
             <div className="flex-none hidden lg:block ">
               <ul className="menu menu-horizontal  font-Nunito mr-5 font-semibold text-lg">
-                {/* Navbar menu content here */} {links}
+                {links}
               </ul>
             </div>
             {!CurrentUser?.displayName && (

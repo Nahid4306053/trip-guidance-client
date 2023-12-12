@@ -11,13 +11,14 @@ import TourLoaction from "../components/PackageDetail/TourLoaction";
 import PageBanner from "../components/shared/PageBanner";
 import SmallError from "../components/shared/SmallError";
 import SmallLoading from "../components/shared/SmallLoading";
+import { useMood } from "../Context/TemplateMoodContext";
 export default function SingelPackage() {
   const { id } = useParams();
   ScrollTop();
   const navigate = useNavigate();
   const { Package, error, isError, isLoading, isSuccess } =
     UseSingelPackage(id);
-
+    const { Darkmood } = useMood()
   return isLoading ? (
     <div className="w-full mt-40 flex justify-center">
       <SmallLoading />
@@ -42,15 +43,15 @@ export default function SingelPackage() {
         </div>
       </PageBanner>
       <div className="container mx-auto my-20">
-        <div className="layout  lg:flex gap-20">
-          <div className="w-full lg:w-8/12 main-bar">
+        <div className="layout  lg:flex gap-10">
+          <div className="w-full lg:w-8/12 main-bar lg:pr-5">
             <Header data={Package.data}></Header>
             <Gallery
               id={Package.data._id}
               data={Package.data.gallery}
             ></Gallery>
             <div className="overview mt-14">
-              <h4 className="text-3xl text-blue-900  text font-bold">
+              <h4 className={`text-3xl ${Darkmood ? "text-white" : "text-blue-900"}   text font-bold`}>
                 Overview
               </h4>
               <p className="leading-8 mt-5 break-words">
@@ -58,13 +59,13 @@ export default function SingelPackage() {
               </p>
             </div>
             <div className="tourPlan mt-14">
-              <h4 className="text-3xl text-blue-900  text font-bold">
+              <h4 className={`text-3xl ${Darkmood ? "text-white" : "text-blue-900"}   text font-bold`}>
                 Tour Plan
               </h4>
               <br />
               {Package.data.tour_plan.map((ele, ind) => {
                 return (
-                  <div className="mt-3 space-y-4 bg-blue-100 p-5 rounded-lg">
+                  <div key={ind} className={`mt-3 space-y-4 ${Darkmood ? "bg-base-300" : "bg-blue-100"} p-5 rounded-lg`}>
                     <h1 className="text-xl font-bold break-words">
                       {ele?.title}
                     </h1>
@@ -75,7 +76,7 @@ export default function SingelPackage() {
             </div>
 
             <div className="overview mt-14">
-              <h4 className="text-3xl text-blue-900  text font-bold">
+              <h4 className={`text-3xl ${Darkmood ? "text-white" : "text-blue-900"}   text font-bold`}>
                 Tour Location
               </h4>
               <div className="mt-10">
@@ -84,7 +85,7 @@ export default function SingelPackage() {
             </div>
 
             <div className="overview mt-14">
-              <h4 className="text-3xl text-blue-900  text font-bold">
+              <h4 className={`text-3xl ${Darkmood ? "text-white" : "text-blue-900"}   text font-bold`}>
                 Tour Guiders:
               </h4>
               <TourGuiders></TourGuiders>

@@ -68,7 +68,7 @@ $secondary : #A6CD96;
 }
 
 
-header{
+.light{
  li{
     a{
       background: none !important; 
@@ -81,6 +81,21 @@ header{
     }
  }
 }
+
+.dark{
+  li{
+     a{
+       background: none !important; 
+       color: #ffffff !important;  
+     }
+  } li{
+     .active{
+       background: none !important; 
+       color: #F0B641 !important;  
+     }
+  }
+ }
+
 .sidebar{
   a{display: block;
     padding: 10px 20px;

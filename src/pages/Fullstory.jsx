@@ -5,12 +5,13 @@ import useFullStory from '../Hooks/UseFullStory'
 import SmallLoading from '../components/shared/SmallLoading';
 import SmallError from '../components/shared/SmallError';
 import moment from 'moment';
+import { useMood } from '../Context/TemplateMoodContext';
 
 export default function Fullstory() {
   const {id} = useParams();
   const {FullStoryData,error,isError,isLoading,isSuccess} = useFullStory(id)
   const {createdAt,description,title,writer} = FullStoryData?.data || {}
-  
+  const { Darkmood } = useMood()
   return (
     <>
       <PageBanner
@@ -37,7 +38,7 @@ export default function Fullstory() {
             </div>
           ) : (
           <div className='details'>
-           <h1 className='text-4xl leading-[40px] font-semibold text-blue-900 font-Nunito'>{title}</h1>
+           <h1 className={`text-4xl leading-[40px] font-semibold ${Darkmood ? "text-sky-400" : "text-blue-900"}  font-Nunito`}>{title}</h1>
            <div className='writer flex gap-5 mt-5 items-center'>
               <div className="avatar h-20 w-20 object-cover  rounded-lg overflow-hidden">
                    <img src={writer?.photoURL} alt="" />

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react'
 import PageBanner from '../components/shared/PageBanner'
 import { Link, useSearchParams } from 'react-router-dom'
@@ -8,6 +9,7 @@ import PackageCard from '../components/shared/PackageCard'
 import Pagenation from '../components/shared/Pagenation'
 import useTourType from '../Hooks/useTourType'
 import Pagetitle from '../Hooks/Pagetitle'
+import { useMood } from '../Context/TemplateMoodContext'
 
 export default function Packages() {
   const {  isSuccess:isdataload, tourTypes } = useTourType();
@@ -15,7 +17,7 @@ export default function Packages() {
   const [SearchParams,setSearchParams] = useSearchParams()  
   const [currentTourType,setCurrentTourType] = useState(SearchParams.has("tour_type") ? SearchParams.get('tour_type') : "" )                  
   const {Packages,error,isError,isLoading,isSuccess} = usePackages(page,9,currentTourType)  
-
+  const { Darkmood } = useMood()
   useEffect(()=>{
     window.scrollTo(0,0)
   },[page]) 
@@ -52,7 +54,7 @@ export default function Packages() {
      isError ? <div className='w-full flex justify-center'><SmallError></SmallError></div>
      :  
       <div className='container mx-auto'> 
-       <div className="header flex justify-between items-center bg-blue-100 p-5 ">
+       <div className={`header flex justify-between items-center ${Darkmood ? "bg-base-300" : "bg-blue-100"} p-5`}>
         <h2 className='totaldata text-2xl font-semibold'>Total Package found {Packages.data.totalData
         }</h2>
         <div className='flex items-center gap-5'>
@@ -60,8 +62,8 @@ export default function Packages() {
         </h2>
         <select value={currentTourType} onChange={(e)=>setCurrentTourType(e.target.value)} className="select text-base  focus:outline-none select-bordered w-full ">
           <option value="" >All</option>
-          {isdataload && tourTypes.data.map((ele)=>{
-            return  <option value={ele.tour_type}>{ele.tour_type}</option>
+          {isdataload && tourTypes.data.map((ele,ind)=>{
+            return  <option key={ind} value={ele.tour_type}>{ele.tour_type}</option>
           })}
         </select>
         </div>            
