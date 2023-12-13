@@ -7,10 +7,10 @@ import logo from "/images/logo.png";
 export default function Footer() {
   const { Darkmood } = useMood();
   const { pathname } = useLocation();
-  const paths = ["/login", "/signup"];
+  const paths = ["/login", "/signup" ,"/dashborder"];
   return (
-    <footer className={` ${ Darkmood ? "bg-base-300" : " bg-blue-100"}`}>
-      <div className="grid  mt-10  container gap-8 mx-auto lg:grid-cols-4 md:grid-cols-2 grid-cols-1">
+    <footer className={`  ${ Darkmood ? "bg-base-300" : " bg-blue-100"} ${ pathname.includes("/dashborder") && " -mt-[150px] "} `}>
+      <div  className="grid  mt-10  container gap-8 mx-auto lg:grid-cols-4 md:grid-cols-2 grid-cols-1">
         <div className="about_info mt-10">
           <img className={`h-14 opacity-75 ${Darkmood && "grayscale"}`} src={logo} alt="" />
           <br />
@@ -133,7 +133,7 @@ export default function Footer() {
       </div>
       <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between"></div>
       <div
-        className={`coppwright  ${Darkmood ? "bg-[#0e1218]" : "bg-blue-200"}  `}
+        className={`coppwright  "bg-[#09253D]"  `}
       >
         <div className="container text-center py-6 mx-auto mt-10 flex-col gap-5 lg:flex-row  justify-between items-center">
           <span className="text-sm ">

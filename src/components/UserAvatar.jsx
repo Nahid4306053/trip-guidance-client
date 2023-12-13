@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useAuth } from "../Context/AuthnicationContext";
@@ -51,7 +51,7 @@ export default function UserAvatar() {
             </span>
           </div>
         </div>
-        <hr className={`border mt-2 ${Darkmood ? "border-yellow-500" : "border-blue-900"}  border-opacity-5 `} />
+        <hr className={`border mt-2 border-sky-400  border-opacity-5 `} />
         <div className={`text-start  mt-4 space-y-2 text-lg font-bold ${Darkmood ? "text-yellow-500" : "text-blue-900"} `}>
           <div>
             <Link className="space-x-5" to="/dashboard/profile">
@@ -64,7 +64,7 @@ export default function UserAvatar() {
             </Link>
           </div>
         </div>
-        <hr className={`border mt-3 ${Darkmood ? "border-yellow-500" : "border-blue-900"}  border-opacity-5 `} />
+        <hr className={`border mt-3 border-black   `} />
         <div className={`text-start  mt-3 space-y-2 text-lg font-bold ${Darkmood ? "text-yellow-500" : "text-blue-900"} `}>
           <div>
             <div onClick={handlsignout}>
